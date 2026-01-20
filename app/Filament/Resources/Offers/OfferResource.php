@@ -14,7 +14,7 @@ use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use Doriiaan\FilamentAstrotomic\Resources\Concerns\ResourceTranslatable;
-
+use UnitEnum;
 
 class OfferResource extends Resource
 {
@@ -23,7 +23,7 @@ class OfferResource extends Resource
     protected static ?string $model = Offer::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
-
+       protected static string | UnitEnum | null $navigationGroup = 'Coupons Management';
     protected static ?string $recordTitleAttribute = 'title';
 
     public static function form(Schema $schema): Schema
