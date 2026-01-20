@@ -6,5 +6,5 @@ class CategoryLang extends Model
 {
     public $timestamps = false;
     public $table = "category_lang";
-    protected $guarded = [' '];
+    protected $fillable = ['name','summary','description'];
 }
