@@ -6,12 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-        use Translatable;
+    use Translatable;
 
     protected $translationForeignKey = 'parent_id';
 
-        public $translatedAttributes = ['title'];
+    public $translatedAttributes = ['name','summary','description'];
 
-    public $table = "category";
-    public $fillable = ['created_at','updated_at','slug','title'];
+    public $fillable = ['type','status','youtube_link'];
 }

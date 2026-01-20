@@ -5,8 +5,6 @@ use Illuminate\Database\Eloquent\Model;
 class CategoryLang extends Model
 {
     public $timestamps = false;
-       public $table = "category_translations";
-
-
-    protected $fillable = ['title'];
+    public $table = "category_lang";
+    protected $guarded = [' '];
 }
