@@ -22,7 +22,7 @@ return new class extends Migration
             $table->timestamp("start_date")->nullable();
             $table->timestamp("end_date")->nullable();
             $table->timestamp("published_at")->nullable();
-            $table->foreignId('created_by')
+            $table->foreignId('created_by')->nullable()
                 ->constrained('users','id')
                 ->onUpdate('cascade')
                 ->onDelete('restrict')->nullable();

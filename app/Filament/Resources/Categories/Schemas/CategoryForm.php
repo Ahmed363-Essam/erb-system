@@ -27,18 +27,18 @@ class CategoryForm
         return $schema->components([
             Section::make('Basic Info')
                 ->schema([
-                    TextInput::make('name.ar')->label('Name (AR)')->required(),
-                    TextInput::make('name.en')->label('Name (EN)')->required(),
+                    TextInput::make('ar.name')->label('Name (AR)')->required(),
+                    TextInput::make('en.name')->label('Name (EN)')->required(),
 
-                    TextInput::make('summary.ar')
+                    TextInput::make('en.summary')
                         ->label('Summary (AR)')
                         ->extraInputAttributes(['style' => 'border-radius:8px;']),
-                    TextInput::make('summary.en')
+                    TextInput::make('en.summary')
                         ->label('Summary (EN)')
                         ->extraInputAttributes(['style' => 'border-radius:8px;']),
 
-                    RichEditor::make('description.ar')->label('Description (AR)'),
-                    RichEditor::make('description.en')->label('Description (EN)'),
+                    RichEditor::make('ar.description')->label('Description (AR)'),
+                    RichEditor::make('en.description')->label('Description (EN)'),
 
                     Select::make('type')
                         ->label('Type')

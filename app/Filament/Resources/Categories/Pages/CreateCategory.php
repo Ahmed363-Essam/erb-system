@@ -11,25 +11,35 @@ class CreateCategory extends CreateRecord
 {
     use CreateTranslatable;
     protected static string $resource = CategoryResource::class;
-//         protected function afterCreate(): void
+//             protected function mutateFormDataBeforeCreate(array $data): array
+// {
+//     dd($data);
+// }
+
+// protected function afterCreate(): void
 // {
 //     $category = $this->record;
 
-//     // قائمة الـ media fields اللي عندنا
 //     $mediaFields = [
 //         'mobile_image',
-//         // 'mobile_cover',
-//         // 'mobile_icon',
-//         // 'web_image',
-//         // 'web_cover',
-//         // 'web_icon',
+//         'mobile_cover',
+//         'mobile_icon',
+//         'web_image',
+//         'web_cover',
+//         'web_icon',
 //     ];
 
 //     foreach ($mediaFields as $field) {
-//         $filePath = $this->form->getState($field)[$field];
+//         $state = $this->form->getState($field);
+
+//         // لو الحقل عبارة عن array بسبب الترجمة، نجيب القيمة الحقيقية
+//         if (is_array($state) && isset($state[$field])) {
+//             $filePath = $state[$field];
+//         } else {
+//             $filePath = $state; // لو string مباشرة
+//         }
 
 //         if ($filePath) {
-//             // لو Filament خزنه في storage/app/public
 //             $fullPath = storage_path('app/public/' . $filePath);
 
 //             if (file_exists($fullPath)) {
@@ -41,9 +51,10 @@ class CreateCategory extends CreateRecord
 //         }
 //     }
 
-//     Notification::make()
+//     \Filament\Notifications\Notification::make()
 //         ->title('Category created successfully with Media!')
 //         ->success()
 //         ->send();
 // }
+
 }
